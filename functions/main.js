@@ -134,6 +134,18 @@ let resultNumber2 = getEvenOrOddNumber(6);
 console.log(resultNumber);
 console.log(resultNumber2);
 
+// la misma función pero con Return Implícito y Operador Ternario.
+
+const obtenerNumeroParImpar = (numero) => (numero % 2 === 0 ? true : false);
+
+let resultadoNumero1 = obtenerNumeroParImpar(7);
+let resultadoNumero2 = obtenerNumeroParImpar(8);
+let resultadoNumero3 = obtenerNumeroParImpar(15);
+
+console.log("Es numero par? ", resultadoNumero1);
+console.log("Es numero par? ", resultadoNumero2);
+console.log("Es numero par? ", resultadoNumero3);
+
 /**
  * 2.- Crear una función Flecha que me indique si una persona es mayor o menor de edad.
  */
