@@ -43,6 +43,7 @@ const printMentorName = (mentor) => {
     console.log(
         `Hola, mi nombre es ${mentor.name} ${mentor.lastname} y tengo ${mentor.age} años!`
     );
+    // Función que realiza una operación matemática con Template Strings.
     console.log(
         `Hola, mi nombre es ${mentor.name} ${mentor.lastname} y tengo ${
             30 + 3
@@ -51,3 +52,30 @@ const printMentorName = (mentor) => {
 };
 
 printMentorName(mentor);
+
+// Agregar una nueva propiedad al Objeto:
+mentor.hobbies = ["chess", "music", "starcraft", "diablo", "koding"];
+
+console.log(mentor);
+
+// Imprimir de forma individual:
+console.log(mentor.hobbies);
+
+mentor.hobbies = "none";
+console.log(mentor.hobbies);
+
+// Eliminar una propiedad del Objeto:
+delete mentor.age;
+console.log(mentor);
+
+// Para saber si un Objeto tiene una propiedad en específico:
+
+console.log(mentor.hasOwnProperty("hobbies"));
+
+/* Para el caso de que no se tenga una propiedad, JavaScript devuelve Undefined, sin embargo, se puede manejar así: */
+
+console.log(mentor.adress);
+
+if (mentor.adress === undefined) {
+    console.log("El mentor no tiene una dirección");
+}
