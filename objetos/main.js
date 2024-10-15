@@ -79,3 +79,128 @@ console.log(mentor.adress);
 if (mentor.adress === undefined) {
     console.log("El mentor no tiene una dirección");
 }
+
+/* 
+Sintaxis de condicional If
+
+if( condicion1 ) {
+    si condicion 1 se cumple
+} else if ( condicion2 ) {
+    si condicion 2 se cumple 
+} else {
+    si no se cumple ninguna de las condiciones anteriores
+}  */
+
+/* Sintaxis de operador ternario ?
+
+condicion ? si se cumple : si no se cumple */
+
+/* Sintaxis de Condicional switch
+
+let selection = "a"  // "b" || "c" || "d"
+
+// Si lo hicieramos con un if:
+
+if( selection === "a"){
+    console.log("tu seleccion es a")
+} else if ( seleccion === "b"){
+    console.log("tu seleccion es b");
+} else if ( seleccion === "c"){
+    console.log("tu seleccion es c");
+} else if ( seleccion === "d"){
+    console.log("tu seleccion es d");
+} else {
+    console.log("tu seleccion no es válida");
+} */
+
+// Con Switch
+
+/* switch(selection){
+    case "a":
+        console.log("tu seleccion es a");
+        break
+    case "b":
+        console.log("tu seleccion es b");
+        break
+    case "c":
+        console.log("tu seleccion es c");
+        break
+    case "d":
+        console.log("tu seleccion es d");
+        break
+    default: 
+        console.log("tu seleccion no es válida");    
+} */
+
+/* 1.- Crear un  objeto de JavaScript que represente un programa de televisión, el cuL puede tener las propiedades que se deseen, sin embaego, debe tener por lo menos estas tres propiedades 
+    - Nombre, Género y Lanzamiento
+    - Debe tener el método presentShow y debe regresar un texto con la presentación del programa donde describa el Nombre, el género y el lanzamiento. */
+
+let tvShow = {
+    name: "Breaking Bad",
+    creator: "Vince Gilligan",
+    genere: ["acción", " drama", " suspenso"],
+    launch: "Enero de 2008",
+    seasons: 5,
+    country: "USA",
+    presentShow: () => {
+        console.log(
+            `Esta galardonada serie es ${tvShow.name} serie de ${tvShow.genere} que fue lanzada en ${tvShow.launch} y que cuenta con ${tvShow.seasons} exitosas temporadas, escrita y dirigida por ${tvShow.creator} un verdadero genio del género. No te la pierdas!!`
+        );
+    },
+};
+
+let tvShow2 = {
+    name: "The Office",
+    creator: "Greg Daniels",
+    genere: "comedia",
+    launch: "Marzo de 2005",
+    seasons: 6,
+    country: "USA",
+    presentShow: () => {
+        console.log(
+            `Esta galardonada serie es ${tvShow.name} serie de ${tvShow.genere} que fue lanzada en ${tvShow.launch} y que cuenta con ${tvShow.seasons} exitosas temporadas, escrita y dirigida por ${tvShow.creator} un verdadero genio del género. No te la pierdas!!`
+        );
+    },
+};
+
+let tvShow3 = {
+    name: "The Last Of Us",
+    creator: "Neil Druckmann",
+    genere: ["acción", " drama", " suspenso"],
+    launch: "Febrero de 2023",
+    seasons: 5,
+    country: "USA",
+    presentShow: () => {
+        console.log(
+            `Esta galardonada serie es ${tvShow.name} serie de ${tvShow.genere} que fue lanzada en ${tvShow.launch} y que cuenta con ${tvShow.seasons} exitosas temporadas, escrita y dirigida por ${tvShow.creator} un verdadero genio del género. No te la pierdas!!`
+        );
+    },
+};
+
+tvShow.presentShow();
+
+/* 2.- Crear una función que me permita preguntar algo del programa
+    ( Nombre, Género, Lamzamiento).    
+    esta función, debe funcionar para cualquier objeto, para cualquier programa de TV.  */
+
+const getShowData = (tvShow, propertyToExtract) => {
+    switch (propertyToExtract) {
+        case "nombre":
+            return tvShow.name;
+        case "genero":
+            return tvShow.genere;
+        case "lanzamiento":
+            return tvShow.launch;
+        default:
+            return "Tu selección no es válida";
+    }
+};
+
+let test1 = getShowData(tvShow, "nombre");
+let test2 = getShowData(tvShow2, "genero");
+let test3 = getShowData(tvShow3, "lanzamiento");
+
+console.log(test1);
+console.log(test2);
+console.log(test3);
