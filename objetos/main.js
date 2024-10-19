@@ -153,7 +153,7 @@ let tvShow = {
 let tvShow2 = {
     name: "The Office",
     creator: "Greg Daniels",
-    genere: "comedia",
+    genere: "Comedia",
     launch: "Marzo de 2005",
     seasons: 6,
     country: "USA",
@@ -200,7 +200,11 @@ const getShowData = (tvShow, propertyToExtract) => {
 let test1 = getShowData(tvShow, "nombre");
 let test2 = getShowData(tvShow2, "genero");
 let test3 = getShowData(tvShow3, "lanzamiento");
+let test4 = getShowData(tvShow, "genero");
+let test5 = getShowData(tvShow, "creator");
 
 console.log(test1);
 console.log(test2);
 console.log(test3);
+console.log(test4);
+console.log(test5);
