@@ -53,4 +53,42 @@ let myCar = {
 let resultPresentCar = myCar.presentCar();
 console.log(resultPresentCar);
 
-/* 3.- Se necesita saber los años que han pasado desde el lanzamiento de un album de alguna banda. */
+/* 3.- Se necesita saber los años que han pasado desde el lanzamiento de un album de alguna banda. 
+
+Para saber los años que han pasado desde el lanzamiento de un álbum de alguna banda, se necesita comparar el año actual contra el año del estreno del álbum y obtener la diferencia de años.  
+
+*/
+
+let album1 = {
+    name: "Californication",
+    yearOfRelease: 1999,
+};
+
+let album2 = {
+    name: "Celebration Day",
+    yearOfRelease: 2012,
+};
+
+let album3 = {
+    name: "Death Magnetic",
+    yearOfRelease: 2008,
+};
+
+const getYearsOfDifference = (album, currentYearNow) => {
+    let yearsDifference = currentYearNow - album.yearOfRelease;
+    return yearsDifference;
+};
+
+let resultAlbum1 = getYearsOfDifference(album1, 2024);
+let resultAlbum2 = getYearsOfDifference(album2, 2024);
+let resultAlbum3 = getYearsOfDifference(album3, 2024);
+
+console.log(
+    `Han pasado ${resultAlbum1} años desde el lanzamiento del álbum ${album1.name}`
+);
+console.log(
+    `Han pasado ${resultAlbum2} años desde el lanzamiento del álbum ${album2.name}`
+);
+console.log(
+    `Han pasado ${resultAlbum3} años desde el lanzamiento del álbum ${album3.name}`
+);
