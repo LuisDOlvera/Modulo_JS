@@ -54,6 +54,19 @@ const getInitials = () => {};
  *          - Los demás productos son difíciles.
  */
 
+const getProductEasyOrDifficult = (product) => {
+    if (product.length < 6) {
+        return "Fácil de Recordar";
+    } else {
+        return "Difícil de Recordar";
+    }
+};
+
+let resultProduct1 = getProductEasyOrDifficult("Anaxagoras");
+let resultProduct2 = getProductEasyOrDifficult("Zeus");
+console.log(resultProduct1);
+console.log(resultProduct2);
+
 /**
  *      3.-
  *           Entrada: anglosajón
@@ -76,3 +89,10 @@ const getInitials = () => {};
  * si la cantidad de letras es impar, quita la letra de en medio y la divide
  *
  */
+
+const getWordToEvaluate = (word) => {
+    let wordToDivide = word.length;
+
+    if (wordToDivide % 2 === 0) {
+    }
+};

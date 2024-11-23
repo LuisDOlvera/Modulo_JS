@@ -288,3 +288,180 @@ let result = textToReplace.replace(/blue|house|car/gi, function (x) {
 });
 
 console.log("replace ====> ", result); // Mr BLUE has a BLUE HOUSE and a BLUE CAR
+
+/**
+ * =======================================================================
+ * 
+ *  The replaceAll() method searches a string for a value or a regular expression.
+
+ *  The replaceAll() method returns a new string with all values replaced.
+
+ *  The replaceAll() method does not change the original string.
+
+ *  The replaceAll() method was introduced in JavaScript 2021.
+
+*   The replaceAll() method does not work in Internet Explorer.
+
+ * ====================================================================== 
+ */
+
+let replaceAllText =
+    "I love cats. Cats are very easy to love. Cats are very popular";
+
+console.log("replaceAll ====> ", replaceAllText.replaceAll("Cats", "Dogs"));
+console.log("replaceAll ====> ", replaceAllText.replaceAll("cats", "dogs"));
+console.log("replaceAll ====> ", replaceAllText.replaceAll(/Cats/g, "Dogs"));
+console.log("replaceAll ====> ", replaceAllText.replaceAll(/cats/g, "dogs"));
+
+/**
+ * =======================================================================
+ * 
+ *  The search() method matches a string against a regular expression **
+
+ *  The search() method returns the index (position) of the first match.
+
+ *  The search() method returns -1 if no match is found.
+
+*   The search() method is case sensitive.
+
+ * ====================================================================== 
+ */
+
+let textToSearch = "Mr. Blue has a blue house";
+console.log("search ====> ", textToSearch.search("Blue")); // 4
+console.log("search ====> ", textToSearch.search("blue")); // 15
+console.log("search ====> ", textToSearch.search(/Blue/)); // 4
+console.log("search ====> ", textToSearch.search(/blue/)); // 15
+console.log("search ====> ", textToSearch.search(/blue/i)); // 4
+console.log("search ====> ", textToSearch.search("Red")); // -1
+
+/**
+ * =======================================================================
+ * 
+ *  The slice() method extracts a part of a string.
+
+ *  The slice() method returns the extracted part in a new string.
+
+*  The slice() method does not change the original string.
+
+*  The start and end parameters specifies the part of the string to extract.
+
+*  The first position is 0, the second is 1, ...
+
+*  A negative number selects from the end of the string.
+
+ * ====================================================================== 
+ */
+
+// Slice yhe first 5 positions:
+console.log("slice ====> ", text.slice(0, 5)); // Hello
+// From position 3 to the end:
+console.log("slice ====> ", text.slice(3)); // lo world
+// From position 3 to 8:
+console.log("slice ====> ", text.slice(3, 8)); // lo wo
+// Only the first character:
+console.log("slice ====> ", text.slice(0, 1)); // H
+// Only the last cgaracter:
+console.log("slice ====> ", text.slice(-1)); // d
+// The whole string:
+console.log("slice ====> ", text.slice(0)); // Hello World
+
+/**
+ * =======================================================================
+ * 
+ *  The split() method splits a string into an array of substrings.
+
+ *  The split() method returns the new array.
+
+ *  The split() method does not change the original string.
+
+ *  If (" ") is used as separator, the string is split between words.
+
+ * ====================================================================== 
+ */
+
+// Split the words:
+let textToSplit = "How are you doing today?";
+console.log("split ====> ", textToSplit.split(" ")); // [ 'How', 'are', 'you', 'doing', 'today?' ]
+const myArrayToSplit = textToSplit.split(" ");
+// Split the words, and return the second word:
+let wordSplit = myArrayToSplit[1];
+console.log("split ===> ", wordSplit); // are
+// Split the characteres, including spaces:
+console.log("split ====> ", textToSplit.split("")); /*  [
+    'H', 'o', 'w', ' ', 'a',
+    'r', 'e', ' ', 'y', 'o',
+    'u', ' ', 'd', 'o', 'i',
+    'n', 'g', ' ', 't', 'o',
+    'd', 'a', 'y', '?'
+  ] */
+// Use the limit parameter:
+console.log("split ====> ", textToSplit.split(" ", 4)); // [ 'How', 'are', 'you', 'doing' ]
+// Use a sign as a separator:
+console.log("split ====> ", textToSplit.split("o")); // [ 'H', 'w are y', 'u d', 'ing t', 'day?' ]
+
+/**
+ * =======================================================================
+ * 
+ *  The startsWith() method returns true if a string starts with a specified string.
+
+ *  Otherwise it returns false.
+
+ *  The startsWith() method is case sensitive.
+
+ * ====================================================================== 
+ */
+
+// Start a position 0 (true):
+console.log("startsWith ====> ", text3.startsWith("Hello")); // True
+// Start a position 1 (false):
+console.log("startsWith ====> ", text3.startsWith("Hello", 1)); // False
+
+/**
+ * =======================================================================
+ * 
+ *  The substr() method extracts a part of a string.
+
+ *  The substr() method begins at a specified position, and returns a specified number of characters.
+
+ *  The substr() method does not change the original string.
+
+ *  To extract characters from the end of the string, use a negative start position.
+
+ * ====================================================================== 
+ */
+
+// Extract a substring from text:
+let textToSubstr = "Hello Daniela";
+console.log("substr ====> ", textToSubstr.substr(1, 4)); // ello
+// Start at position 2:
+console.log("substr ====> ", textToSubstr.substr(2)); // llo Daniela
+// Only the first:
+console.log("substr ====> ", textToSubstr.substr(0, 1)); // H
+// Only the last:
+console.log("substr ====> ", textToSubstr.substr(textToSubstr.length - 1, 1)); // a
+// Tle last 6:
+console.log("substr ====> ", textToSubstr.substr(-6, 6)); // aniela
+
+/**
+ * =======================================================================
+ * 
+ *  The substring() method extracts characters, between two indices (positions), from a string, and returns the substring.
+
+ *  The substring() method extracts characters from start to end (exclusive).
+
+ *  The substring() method does not change the original string.
+
+ *  If start is greater than end, arguments are swapped: (4, 1) = (1, 4).
+
+ *  Start or end values less than 0, are treated as 0.
+
+ * ====================================================================== 
+ */
+
+// Extract a substring from text:
+console.log("substring ====> ", textToSubstr.substring(1, 4)); // ell
+// Start from position 2:
+console.log("substring ====> ", textToSubstr.substring(2)); // llo Daniela
+// If start is greater than end, parameters are swapped
+console.log("substring ====> ", textToSubstr.substring(4, 1)); // llo Daniela
