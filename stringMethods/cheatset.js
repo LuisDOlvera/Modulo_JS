@@ -464,4 +464,4 @@ console.log("substring ====> ", textToSubstr.substring(1, 4)); // ell
 // Start from position 2:
 console.log("substring ====> ", textToSubstr.substring(2)); // llo Daniela
 // If start is greater than end, parameters are swapped
-console.log("substring ====> ", textToSubstr.substring(4, 1)); // llo Daniela
+console.log("substring ====> ", textToSubstr.substring(4, 1)); // ell
