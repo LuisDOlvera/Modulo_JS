@@ -139,26 +139,50 @@ let koders = [
 /**
  * 1.- Se necesita una lista que contenga los nombres completos de los mentores ordenados alfabéticamente.
  */
-
-const getFullNames = (mentorsArray) => {
-    for (let i = 0; i < mentorsArray.length; i++) {
-        let fullNames = [];
-        let name = mentorsArray[i][0];
-        let lastName = mentorsArray[i][1];
-        fullNames.push(`${name} ${lastName}`);
+const getSortedFullNames = (mentors) => {
+    let fullNames = [];
+    for (let i = 0; i < mentors.length; i++) {
+        fullNames.push(`${mentors[i][0]} ${mentors[i][1]}`);
     }
+    fullNames.sort();
     return fullNames;
 };
-let resultFullNames = getFullNames();
-console.log(resultFullNames);
+let sortedFullNames = getSortedFullNames(mentors);
+console.log(sortedFullNames);
+
 /**
  * 2.- Se necesita una lista con los nombres y promedios generales de todos los Koders
  */
-
+const getkodersAverages = (koders) => {
+    let kodersAverages = [];
+    for (let i = 0; i < koders.length; i++) {
+        let nameKoder = koders[i].name;
+        let scores = Object.values(koders[i].scores);
+        let totalScore = 0;
+        for (let j = 0; j < scores.length; j++) {
+            totalScore += scores[j];
+        }
+        let average = totalScore / scores.length;
+        kodersAverages.push({ name: nameKoder, average: average });
+    }
+    return kodersAverages;
+};
+let resultKodersAverages = getkodersAverages(koders);
+console.log(resultKodersAverages);
 /**
  * 3.- Se necesita una lista con los nombres de aquellos koders que aún no se han graduado.
  */
-
+const getNotGraduatedKoders = (koders) => {
+    let notGraduatedKoders = [];
+    for (let i = 0; i < koders.length; i++) {
+        if (!koders[i].isGraduated) {
+            notGraduatedKoders.push(koders[i].name);
+        }
+    }
+    return notGraduatedKoders;
+};
+let resultNotGraduatedKoders = getNotGraduatedKoders(koders);
+console.log(resultNotGraduatedKoders);
 /**
  * 4.- Se necesita conocer el promedio grupal de cada materia impartida enlel bootcamp.
  * html -> 9
