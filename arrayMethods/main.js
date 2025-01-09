@@ -107,7 +107,7 @@ let koders = [
     {
         name: "Verónica Cruz",
         scores: {
-            html: 10,
+            html: 8,
             css: 9.2,
             js: 9.7,
             bootstrap: 8,
@@ -184,12 +184,91 @@ const getNotGraduatedKoders = (koders) => {
 let resultNotGraduatedKoders = getNotGraduatedKoders(koders);
 console.log(resultNotGraduatedKoders);
 /**
- * 4.- Se necesita conocer el promedio grupal de cada materia impartida enlel bootcamp.
+ * 4.- Se necesita conocer el promedio grupal de cada materia impartida en el bootcamp.
  * html -> 9
  * css -> 10
  * etc...
  */
 
+const getSignatureAverage = (dataArray, signature) => {
+    let signatureTotal = 0;
+    for (let i = 0; i < dataArray.length; i++) {
+        let signatureScore = dataArray[i].scores[signature];
+        signatureTotal += signatureScore;
+        //console.log(dataArray[i].scores[signature]);
+    }
+    let signatureAverage = signatureTotal / dataArray.length;
+    console.log(signatureAverage);
+    //return signatureAverage;
+    return `El promedio general de ${signature} es: ${signatureAverage}`;
+};
+// Regresamos el resultado dentro de un Array:
+
+const getGeneralSignatureAveragesInList = (dataArray) => {
+    let averagesList = [];
+    averagesList.push(getSignatureAverage(dataArray, "html"));
+    averagesList.push(getSignatureAverage(dataArray, "css"));
+    averagesList.push(getSignatureAverage(dataArray, "js"));
+    averagesList.push(getSignatureAverage(dataArray, "bootstrap"));
+    console.log(averagesList);
+    return averagesList;
+};
+getGeneralSignatureAveragesInList(koders);
+
+// Regresamos el resultado dentro de un Objeto:
+
+/* const getGeneralSignatureAverages = (dataArray) => {
+    let averagesObject = {};
+    averagesObject.html = getSignatureAverage(dataArray, "html");
+    averagesObject.css = getSignatureAverage(dataArray, "css");
+    averagesObject.js = getSignatureAverage(dataArray, "js");
+    averagesObject.bootstrap = getSignatureAverage(dataArray, "bootstrap");
+    console.log(averagesObject);
+    return averagesObject;
+};
+ */
+//getSignatureAverage(koders, "css");
+/* 
+getGeneralSignatureAverages(koders);
+ */
+
 /**
  * 5.- Se necesita saber cuál es koder con el promedio más alto y cuál es el que tiene el promedio más bajo.
  */
+
+const getKoderAverage = (koders) => {
+    // destructuring
+    let { name, scores } = koders;
+    let { html, css, js, bootstrap } = scores;
+    let average = (html + css + js + bootstrap) / 4;
+    let koderObject = { average, name };
+    console.log(koderObject);
+    return koderObject;
+};
+
+const getAllKodersAverage = (dataArray) => {
+    let averagesArray = [];
+    for (let i = 0; i < dataArray.length; i++) {
+        let singleAverage = getKoderAverage(dataArray[i]);
+        averagesArray.push(singleAverage);
+    }
+    return averagesArray.sort((a, b) => a.average - b.average);
+};
+
+const getBestAverage = (averageArray) => averageArray.pop();
+const getLowestAverage = (averageArray) => averageArray.shift();
+
+let kodersAverages = getAllKodersAverage(koders);
+
+let bestKoder = getBestAverage(kodersAverages);
+let koderForTraining = getLowestAverage(kodersAverages);
+
+console.log("-----------------------------");
+
+console.log(bestKoder);
+
+console.log("-----------------------------");
+
+console.log(koderForTraining);
+
+//getKoderAverage(koders[0]);
