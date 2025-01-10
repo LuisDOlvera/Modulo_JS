@@ -252,6 +252,7 @@ const getAllKodersAverage = (dataArray) => {
         let singleAverage = getKoderAverage(dataArray[i]);
         averagesArray.push(singleAverage);
     }
+    console.log(averagesArray);
     return averagesArray.sort((a, b) => a.average - b.average);
 };
 
