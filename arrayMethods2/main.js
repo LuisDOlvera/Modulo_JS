@@ -32,7 +32,7 @@ names.forEach((item, index, arr) => {
 
 /* Función que me devuelve una liata de los nombres de mi Array names en mayúsculas utilizando forEach. */
 
-const uppercaseNames = (namesArray) => {
+/* const uppercaseNames = (namesArray) => {
     let uppercased = [];
     namesArray.forEach((name) => uppercased.push(name.toUpperCase()));
     console.log(uppercased);
@@ -40,7 +40,7 @@ const uppercaseNames = (namesArray) => {
 };
 
 uppercaseNames(names);
-
+ */
 /**
  * Se necesita saber cuáles de estos números son pares y cuáles nones
  */
@@ -68,3 +68,52 @@ const isEven = (number) => {
 };
 
 numbers.forEach(isEven);
+
+/**
+ * Devuelve el promedio por cada Koder en el arreglo utilizando ForEach()
+ */
+
+let koders = [
+    {
+        name: "Verónica Cruz",
+        scores: {
+            html: 8,
+            css: 9.2,
+            js: 9.7,
+            bootstrap: 8,
+        },
+        isGraduated: true,
+    },
+    {
+        name: "Miguel Aceves",
+        scores: {
+            html: 8.7,
+            css: 10,
+            js: 8.3,
+            bootstrap: 9.8,
+        },
+        isGraduated: false,
+    },
+    {
+        name: "Antonio Cano",
+        scores: {
+            html: 9.2,
+            css: 10,
+            js: 10,
+            bootstrap: 6.5,
+        },
+        isGraduated: false,
+    },
+];
+
+const getKoderAverage = (koders) => {
+    // destructuring
+    let { name, scores } = koders;
+    let { html, css, js, bootstrap } = scores;
+    let average = (html + css + js + bootstrap) / 4;
+    let koderObject = { name, average };
+    console.log(koderObject);
+    return koderObject;
+};
+
+koders.forEach(getKoderAverage);
